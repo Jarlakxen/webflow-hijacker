@@ -2,6 +2,7 @@ import sbt._
 import Keys._
 
 import com.github.siasia._
+import com.github.siasia.PluginKeys._
 
 import com.typesafe.sbteclipse.plugin.EclipsePlugin._
 
@@ -26,6 +27,7 @@ object WebflowHijacker extends Build {
         file("."),
         settings =  Project.defaultSettings ++
                     ScalatraPlugin.scalatraWithJRebel ++ 
+                    WebPlugin.webSettings ++
                     scalateSettings ++ /*
                     Seq(
                         EclipseKeys.projectFlavor := EclipseProjectFlavor.Scala,
