@@ -1,0 +1,97 @@
+
+// --------- General Vars ---------
+
+@iconSpritePath:		"../../img/glyphicons-halflings.png";
+@iconWhiteSpritePath:	"../../img/glyphicons-halflings-white.png";
+
+@bodyBackground: #E9EAEE;
+@wellBackground: @white;
+
+@titleFontColor: #013D93;
+
+@basePanelBorderRadius: 20px;
+@basePanelMarginTop: 15px;
+
+@baseGrey: #eeeeee;
+
+@iconSize: 30px;
+
+@smallIconSize: @iconSize - 5px;
+
+// --------- General Tags ---------
+
+body {
+	//padding-top: 40px;
+}
+
+// --------- General Components ---------
+
+.base-panel(@color: baseGrey) {
+	.well;
+
+	border: 1px solid #ccc;
+
+	background-color: @color;
+
+	margin-top: @basePanelMarginTop;
+
+	.override-border-radius(@basePanelBorderRadius);
+}
+
+.grey-base-panel {
+	.base-panel(@baseGrey);
+}
+
+
+.white-base-panel {
+	.base-panel(white);
+}
+
+.table-borderless tr td {
+	border-top: 0px;
+}
+
+.row-borderless td {
+	border-top: 0px;
+}
+
+.page-title-container {
+	height: 47px;
+	padding-top: 7px;
+	padding-left: 10px;
+	text-align: left;
+	display: table-cell;
+	vertical-align: middle;
+	color: @titleFontColor;
+}
+
+.scrollable(@height: 100%) {
+	max-height: @height;
+	overflow: auto;
+}
+
+
+.selected {
+	font-weight: bold;
+}
+
+// --------- AngularJS Style ---------
+
+input.ng-invalid-maxlength {
+	border: 3px solid rgba(255, 0, 0, 0.55) !important;
+}
+
+.ng-invalid-maxlength-msg {
+	text-align: center;
+	font-weight: bold;
+	color: red;
+	font-size: 13px;
+}
+
+// --------- General Functions ---------
+
+.override-border-radius(@radius) {
+  -webkit-border-radius: @radius !important;
+     -moz-border-radius: @radius !important;
+          border-radius: @radius !important;
+}
